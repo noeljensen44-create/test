@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meine erste Website</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      color: #222;
+    }
+    .card {
+      background: #fff;
+      max-width: 480px;
+      width: 100%;
+      padding: 32px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      text-align: center;
+    }
+    h1 { margin-bottom: 12px; }
+    p { margin-bottom: 20px; line-height: 1.5; }
+    button {
+      background: #667eea;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover { background: #5563d6; }
+    #zaehler { margin-top: 16px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>Hallo Welt! 👋</h1>
+    <p>Das ist meine erste Website. Sie wurde mit Claude Code erstellt.</p>
+    <button id="knopf">Klick mich</button>
+    <p id="zaehler">Klicks: 0</p>
+  </main>
+  <script>
+    let klicks = 0;
+    document.getElementById("knopf").addEventListener("click", () => {
+      klicks++;
+      document.getElementById("zaehler").textContent = "Klicks: " + klicks;
+    });
+  </script>
+</body>
+</html>
